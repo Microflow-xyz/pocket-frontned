@@ -24,7 +24,7 @@ const EcosystemProjectsDeliveringImpact = ({
   errorMessage,
 }: EcosystemProjectsDeliveringImpactProps) => {
   return (
-    <div className="flex w-full flex-col gap-5 rounded-2xl bg-surfaceContainerLow p-5">
+    <div className="flex w-full flex-col gap-3 rounded-2xl bg-surfaceContainerLow p-5">
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <span className="text-title-medium">
@@ -34,9 +34,12 @@ const EcosystemProjectsDeliveringImpact = ({
             <DisabledTimePeriod>Last 2 months</DisabledTimePeriod>
           </div>
         </div>
-        <span className="text-body-medium text-onSurfaceVariant">
-          This cycle/ previous cycle
-        </span>
+        <div className="text-body-medium italic text-onSurfaceVariant">
+          <p className="m-0 p-0">
+            All open Sockets, POPs, and contributors currently.
+          </p>
+          <p className="m-0 p-0">Current Cycle / Previous Cycle</p>
+        </div>
       </div>
       <span className="text-title-large text-primary">
         {isLoading ? (
@@ -93,7 +96,8 @@ const CommunityAndCollaboration = () => {
       />
       <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
         <LineChartMetric
-          title="Pocket Network DNA NPS"
+          title="POKT Network DNA NPS"
+          description="Community sentiment of POKT DNA, measured quarterly."
           color="secondary"
           postfix="%"
           isLoading={isLoading}
@@ -101,9 +105,11 @@ const CommunityAndCollaboration = () => {
           percentDate={true}
           data={data?.metrics.pocket_network_DNA_NPS.values}
           errorMessage={error?.message}
+          xAxisLabelFormat="yy/MM"
         />
         <LineChartMetric
           title="Community NPS"
+          description="Community sentiment of POKT, measured quarterly."
           color="secondary"
           postfix="%"
           percentDate={true}

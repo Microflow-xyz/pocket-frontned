@@ -26,6 +26,8 @@ const communityKeys = createKeyFactory('community', {
   useGetTransparency: (params: GetTransparencyRequest) => Object.values(params),
 
   useGetAdaptability: (params: GetAdaptabilityRequest) => Object.values(params),
+
+  useGetQuarterlyERAAllocation: () => [null],
 });
 
 const governanceKeys = createKeyFactory('governance', {

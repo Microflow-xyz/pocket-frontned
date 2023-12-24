@@ -16,7 +16,7 @@ export const CoverageRatio = () => {
     <LineChartMetric
       title="Coverage Ratio"
       color="secondary"
-      description="Protocol revenue / token issuance"
+      description="Protocol Revenue / Token Issuance"
       postfix="%"
       isLoading={isLoading}
       isError={isError}

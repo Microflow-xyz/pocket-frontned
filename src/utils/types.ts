@@ -18,26 +18,20 @@ export interface BarChartMetricsResponse {
 }
 
 export interface AreaChartMetricsResponse {
-  values: [
-    {
-      date: string;
-      value: number;
-    },
-  ];
+  values: {
+    date: string;
+    value: number;
+  }[];
 }
 
 export interface StackedBarChartMetricsResponse {
-  values: [
-    {
-      date: string;
-      values: [
-        {
-          name: string;
-          value: number;
-        },
-      ];
-    },
-  ];
+  values: {
+    date: string;
+    values: {
+      name: string;
+      value: number;
+    }[];
+  }[];
 }
 
 export interface ApiResponse<T> {

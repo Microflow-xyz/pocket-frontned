@@ -32,6 +32,7 @@ interface LineChartMetricProps {
   isError: boolean;
   errorMessage?: string;
   percentDate?: boolean;
+  xAxisLabelFormat?: string;
 }
 
 const LineChartMetric = ({
@@ -48,6 +49,7 @@ const LineChartMetric = ({
   isError,
   errorMessage,
   percentDate = false,
+  xAxisLabelFormat,
 }: LineChartMetricProps) => {
   const theme = useTheme();
   const series: ApexAxisChartSeries = [
@@ -76,7 +78,7 @@ const LineChartMetric = ({
     colors: [theme.palette[color].main],
     tooltip: {
       x: {
-        format: 'dd/MM/yyyy',
+        format: 'yyyy/MM/dd',
       },
       y: {
         formatter: (val: number): string => {
@@ -115,6 +117,11 @@ const LineChartMetric = ({
     },
     xaxis: {
       type: 'datetime',
+      ...(xAxisLabelFormat && {
+        labels: {
+          format: xAxisLabelFormat,
+        },
+      }),
     },
     yaxis: {
       labels: {
@@ -162,7 +169,7 @@ const LineChartMetric = ({
         <div className="text-title-small sm:text-title-semi-large">
           <p className="m-0">{title}</p>
           {description ? (
-            <p className="m-0 mt-1 text-body-medium text-onSurfaceVariant">
+            <p className="m-0 mt-1 text-body-medium italic text-onSurfaceVariant">
               {description}
             </p>
           ) : null}

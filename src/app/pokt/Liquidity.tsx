@@ -12,7 +12,8 @@ export const Liquidity = () => {
 
   return (
     <LineChartMetric
-      title="POKT Liquidity: 2% depth"
+      title="POKT Liquidity: @2% depth"
+      description="How much POKT can you sell on an exchange without moving the price?"
       color="primary"
       isLoading={isLoading}
       isError={isError}

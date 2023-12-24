@@ -1,6 +1,7 @@
 import { Adaptability } from '@/app/community/Adaptability';
 import { Awareness } from '@/app/community/Awareness';
 import { CommunityAndCollaboration } from '@/app/community/CommunityAndCollaboration';
+import { QuarterlyERAAllocation } from '@/app/community/QuarterlyERAAllocation';
 import { Transparency } from '@/app/community/Transparency';
 
 const CommunityPage = () => {
@@ -10,6 +11,7 @@ const CommunityPage = () => {
       <Awareness />
       <Transparency />
       <Adaptability />
+      <QuarterlyERAAllocation />
     </main>
   );
 };

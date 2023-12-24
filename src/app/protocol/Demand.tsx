@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { protocolApiGateway } from '@/api/protocol';
 import {
   LineChartMetric,
@@ -20,6 +22,7 @@ export const Demand = () => {
       <div className="text-title-large">Demand</div>
       <LineChartMetric
         title="Protocol Revenue"
+        description="Burn x Token Price."
         prefix="$"
         color="primary"
         isLoading={isLoading}
@@ -28,7 +31,16 @@ export const Demand = () => {
         errorMessage={error?.message}
       />
       <StackedBarCharMetric
-        title="Gateway operator share of relays"
+        title="Gateway Operator Share of Relays"
+        description={
+          <Link
+            className="text-primary"
+            href="https://mirror.xyz/0x2462fF59E08d60ED5bD737caAa667F5Fe435C358/fM1vWMkSMRwQWidP_wZ4X30mpWHUdSDFITeAxUcZbbA"
+            target="_blank"
+          >
+            Relay Distribution by Gateway
+          </Link>
+        }
         data={data?.metrics.gateway_operator_share_of_relays.values}
         isLoading={isLoading}
         isError={isError}

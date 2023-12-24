@@ -11,6 +11,8 @@ import {
   GetCommunityAndCollaborationRequest,
   GetCommunityAndCollaborationResponse,
   GetCommunityAndCollaborationSuccessResponse,
+  GetQuarterlyERAAllocationResponse,
+  GetQuarterlyERAAllocationSuccessResponse,
   GetTransparencyRequest,
   GetTransparencyResponse,
   GetTransparencySuccessResponse,
@@ -58,4 +60,14 @@ export const communityApiGateway = {
         staleTime: apiConfig.staleTime,
       },
     ),
+
+  useGetQuarterlyERAAllocation: () =>
+    useQuery<
+      GetQuarterlyERAAllocationResponse,
+      ApiError,
+      GetQuarterlyERAAllocationSuccessResponse
+    >(queryKeys.communityKeys.useGetQuarterlyERAAllocation(), {
+      queryFn: () => communityApi.getQuarterlyERAAllocation(),
+      staleTime: apiConfig.staleTime,
+    }),
 };

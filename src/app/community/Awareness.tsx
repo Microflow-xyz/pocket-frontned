@@ -16,7 +16,7 @@ export const Awareness = () => {
     <div className="flex flex-col gap-5">
       <div className="text-title-large">Awareness</div>
       <LineChartMetric
-        title="Twitter followers"
+        title="Twitter Followers"
         color="primary"
         isLoading={isLoading}
         isError={isError}

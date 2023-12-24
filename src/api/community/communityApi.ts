@@ -5,6 +5,7 @@ import {
   GetAwarenessResponse,
   GetCommunityAndCollaborationRequest,
   GetCommunityAndCollaborationResponse,
+  GetQuarterlyERAAllocationResponse,
   GetTransparencyRequest,
   GetTransparencyResponse,
 } from '@/api/community/communityApi.types';
@@ -32,4 +33,8 @@ export const communityApi = {
     timePeriod,
   }: GetAdaptabilityRequest): Promise<GetAdaptabilityResponse> =>
     httpClient.get(`/metrics/community/adaptability?time_period=${timePeriod}`),
+
+  getQuarterlyERAAllocation:
+    async (): Promise<GetQuarterlyERAAllocationResponse> =>
+      httpClient.get(`/metrics/community/quarterly-ERA-allocation`),
 };
